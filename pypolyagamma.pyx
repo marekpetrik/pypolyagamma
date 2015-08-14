@@ -1,8 +1,8 @@
 # distutils: language = c++
-# distutils: sources = cpp/PolyaGamma.cpp cpp/PolyaGammaAlt.cpp cpp/PolyaGammaSP.cpp cpp/InvertY.cpp cpp/include/RNG.cpp cpp/include/GRNG.cpp
+# distutils: sources = pypolyagamma/cpp/PolyaGamma.cpp pypolyagamma/cpp/PolyaGammaAlt.cpp pypolyagamma/cpp/PolyaGammaSP.cpp pypolyagamma/cpp/InvertY.cpp pypolyagamma/cpp/include/RNG.cpp pypolyagamma/cpp/include/GRNG.cpp
 # distutils: libraries = stdc++ gsl gslcblas
 # distutils: library_dirs = /usr/local/lib
-# distutils: include_dirs = cpp/include /usr/local/include
+# distutils: include_dirs = pypolyagamma/cpp/include /usr/local/include
 # distutils: extra_compile_args = -O0 -w -std=c++11 -fopenmp
 # distutils: extra_link_args = -fopenmp
 # cython: boundscheck = False
@@ -19,7 +19,7 @@ from openmp cimport omp_get_num_threads, omp_get_thread_num, omp_get_max_threads
 
 
 # Import C++ classes from RNG.h
-cdef extern from "cpp/include/RNG.hpp":
+cdef extern from "pypolyagamma/cpp/include/RNG.hpp":
 
     # RNG class
     cdef cppclass RNG:
@@ -27,7 +27,7 @@ cdef extern from "cpp/include/RNG.hpp":
 
 
 # Import C++ classes from PolyaGammaHybrid.h
-cdef extern from "cpp/PolyaGammaHybrid.h":
+cdef extern from "pypolyagamma/cpp/PolyaGammaHybrid.h":
 
     # PolyaGammaHybrid class
     cdef cppclass PolyaGammaHybridDouble:

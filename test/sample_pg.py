@@ -27,4 +27,4 @@ v3 = np.zeros(n)
 seeds = np.random.randint(2**16, size=nthreads)
 ppgs = [pypolyagamma.PyPolyaGamma(seed) for seed in seeds]
 pypolyagamma.pgdrawvpar(ppgs, a, b, v3)
-print v3
+print(v3)
